@@ -38,7 +38,9 @@ $question = $options[mt_rand(0, 3)];
       <div class="question">
         <p class="question__text">Q. 以下の内容に当てはまるステータスコードを選んでください</p>
         <p class="question__text">
-          <?php echo $question["description"] ?>
+          意味：<?php echo $question["meaning"] ?>
+          <br>
+          説明：<?php echo $question["description"] ?>
         </p>
       </div>
       <form class="quiz-form" action="result.php" method="post">

@@ -16,13 +16,14 @@ foreach ($status_codes as $status_code) {
   // 送信された回答のデータから配列を探す
   if ($status_code["code"] === $answer_code) {
     $code = $status_code["code"];
+    $meaning = $status_code["meaning"];
     $description = $status_code["description"];
     // 回答コードと配列の値、データ型が一致した場合のみ、必要となるデータの取得
   }
 }
 
 $result = $option === $code;
-// 選択したコードと
+// 選択したコード（数値）と正解のコード（数値）が完全一致した場合に result とし、正誤判定に用いる
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +62,12 @@ $result = $option === $code;
             <th class="answer-table__header">ステータスコード</th>
             <td class="answer-table__text">
               <?php echo $code ?>
+            </td>
+          </tr>
+          <tr class="answer-table__row">
+            <th class="answer-table__header">意味</th>
+            <td class="answer-table__text">
+              <?php echo $meaning ?>
             </td>
           </tr>
           <tr class="answer-table__row">
